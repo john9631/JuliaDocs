@@ -4,7 +4,7 @@
  * -----------
  * Author: John Lynch (john.lynch@iname.com)
  * Copyright: (c) 2013 John Lynch
- * Release Version: 0.1
+ * Release Version: 1.0.0
  * Date Started: 2013/11/06
  *
  * Julia language file for GeSHi.
@@ -12,7 +12,7 @@
  * CHANGES
  * -------
  * 
- * 2013/11/?? (1.0)
+ * 2013/11/?? (1.0.0)
  *   -  First Release
  *
  *
@@ -47,17 +47,23 @@ $language_data = array (
     'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
     'QUOTEMARKS' => array(),
     'ESCAPE_CHAR' => '',
-    'KEYWORDS' => array(
+	'KEYWORDS' => array(
+		/*
+		** reserved words
+		*/
 		1 => array(
 			'function', 'global', 'for', 'end', 'while', 'if', 'else', 'elseif', 'break',
 			'switch', 'case', 'otherwise', 'try', 'catch', 'end', 'const', 'immutable',
 			'import', 'importall', 'export', 'type', 'typealias', 'return', 'true', 
 			'false', 'macro', 'quote', 'in', 'abstract', 'module', 'using', 'continue', 
-			'ifelse, 'do', 'eval', let, finally, throw, 
+			'ifelse', 'do', 'eval', 'let', 'finally', 'throw'
 		),
+		/*
+		** functions and types
+		*/
 		2 => array(
-			'+', '-', '*', '/', '\', '^', ''', '.', '=', '&lt;', '&gt;', '~', 
-			'&amp;', '|', '[', ']', '(', ')', ';', ':', '%', ',', '!',
+			//'+', '-', '*', '/', '\', '^', ''', '.', '=', '&lt;', '&gt;', '~', 
+			//'&amp;', '|', '[', ']', '(', ')', ';', ':', '%', ',', '!',
 			'Array', 'String', 'Bool', 'Number', 'Int', 'Integer', 'Real', 'Complex', 
 			'FloatingPoint', 'Float64', 'Float32', 'Int8', 'Int16', 'Int32', 'Int64', 
 			'Rational', 'AbstractArray', 'Unsigned', 'Signed', 'Uint', 'Uint8', 'Uint16', 
@@ -73,15 +79,27 @@ $language_data = array (
 			'intersect', 'setdiff', 'symdiff', 'complement', 'print', 'printf', 'println', 
 			'sprintf', 'join', 'utf8', 'char', 'search', 'rsearch', 'beginswith', 'endswith',
 			'replace', 'lowercase', 'uppercase', 'ucfirst', 'lcfirst', 
-                        split, rsplit, chop, chomp, lpad, rpad, lstrip, rstrip, strip, isalnum, isalpha, isascii, isblank, iscntrl, isdigit, isgraph, islower, isprint, ispunct, isspace, isupper, isxdigit, match, captures, offset, offsets, matchall, eachmatch, hcat, vcat, hvcat, reshape, deepcopy, similar, reinterpret, map, reduce, mapreduce, DataArray, DataFrame, removeNA, replaceNA, colnames, head, tail, describe, join, groupby, by, stack, readtable, readcsv, readdlm, writetable, writecsv, writedlm, require, reload, include, evalfile, cd, open, write, close, position, seek, seekstart, seekend, skip, isopen, eof, isreadonly, ltoh, htol, serialize, deserialize, download
-
-
-
-
-		),
-		6=> array(
-			run, spawn, success, process_running, process_exited, kill, readsfrom, writesto, readsandwrite, detach, setenv, ENV, getpid, clipboard, strftime, time, cd, gethostname, getipaddr, pwd, mkdir, mkpath, rmdir, ignorestatus
-            	)
+			'split', 'rsplit', 'chop', 'chomp', 'lpad', 'rpad', 'lstrip', 'rstrip', 
+			'strip', 'isalnum', 'isalpha', 'isascii', 'isblank', 'iscntrl', 'isdigit', 
+			'isgraph', 'islower', 'isprint', 'ispunct', 'isspace', 'isupper', 'isxdigit', 
+			'match', 'captures', 'offset', 'offsets', 'matchall', 'eachmatch', 'hcat', 
+			'vcat', 'hvcat', 'reshape', 'deepcopy', 'similar', 'reinterpret', 'map', 
+			'reduce', 'mapreduce', 'DataArray', 'DataFrame', 'removeNA', 'replaceNA', 
+			'colnames', 'head', 'tail', 'describe', 'join', 'groupby', 'by', 'stack', 
+			'readtable', 'readcsv', 'readdlm', 'writetable', 'writecsv', 'writedlm', 
+			'require', 'reload', 'include', 'evalfile', 'cd', 'open', 'write', 'close', 
+			'position', 'seek', 'seekstart', 'seekend', 'skip', 'isopen', 'eof', 
+			'isreadonly', 'ltoh', 'htol', 'serialize', 'deserialize', 'download',
+		//),
+		/*
+		** system interaction
+		*/
+		//6 => array(
+			'run', 'spawn', 'success', 'process_running', 'process_exited', 'kill', 
+			'readsfrom', 'writesto', 'readsandwrite', 'detach', 'setenv', 'ENV', 'getpid', 
+			'clipboard', 'strftime', 'time', 'cd', 'gethostname', 'getipaddr', 'pwd', 
+			'mkdir', 'mkpath', 'rmdir', 'ignorestatus'
+            )
         ),
     'SYMBOLS' => array(
         '...'
