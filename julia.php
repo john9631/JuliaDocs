@@ -38,131 +38,132 @@
  
 $language_data = array (
     'LANG_NAME' => 'Julia',
-    'COMMENT_SINGLE' => array(1 => '%'),
+    'COMMENT_SINGLE' => array(1 => '#'),
     'COMMENT_MULTI' => array(),
-    //Matlab Strings
-    'COMMENT_REGEXP' => array(
-        2 => "/(?<![\\w\\)\\]\\}\\.])('[^\\n']*?')/"
-        ),
     'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array(),
-    'ESCAPE_CHAR' => '',
-	'KEYWORDS' => array(
-		/*
-		** reserved words
-		*/
-		1 => array(
-			'function', 'global', 'for', 'end', 'while', 'if', 'else', 'elseif', 'break',
-			'switch', 'case', 'otherwise', 'try', 'catch', 'end', 'const', 'immutable',
-			'import', 'importall', 'export', 'type', 'typealias', 'return', 'true', 
-			'false', 'macro', 'quote', 'in', 'abstract', 'module', 'using', 'continue', 
-			'ifelse', 'do', 'eval', 'let', 'finally', 'throw'
-		),
-		/*
-		** functions and types
-		*/
-		2 => array(
-			'Array', 'String', 'Bool', 'Number', 'Int', 'Integer', 'Real', 'Complex', 
-			'FloatingPoint', 'Float64', 'Float32', 'Int8', 'Int16', 'Int32', 'Int64', 
-			'Rational', 'AbstractArray', 'Unsigned', 'Signed', 'Uint', 'Uint8', 'Uint16', 
-			'Uint32', 'Uint64', 'Vector', 'AbstractVector', 'Matrix', 'AbstractMatrix', 
-			'Type', 'IO', 'Any', 'ASCIIString', 'Union', 'Dict', 'Function', 'SubArray', 
-			'Range', 'Range1', 'Symbol', 'Expr',
-			
-			'cell', 'collect', 'filter', 'merge', 'divrem', 'hex', 'dec', 'oct', 'base', 
-			'int', 'round', 'cmp', 'float', 'linspace', 'fill',	'start', 'done', 'tuple', 
-			'minimum', 'maximum', 'count', 'index', 'append', 'push', 'pop', 'shift', 
-			'unshift', 'insert', 'splice', 'reverse', 'sort', 'zip', 'length', 'delete', 
-			'copy', 'haskey', 'keys', 'values', 'get', 'getkey', 'Set', 'isa', 'issubset', 
-			'intersect', 'setdiff', 'symdiff', 'complement', 'print', 'printf', 'println', 
-			'sprintf', 'join', 'utf8', 'char', 'search', 'rsearch', 'beginswith', 'endswith',
-			'replace', 'lowercase', 'uppercase', 'ucfirst', 'lcfirst', 'union',
-			'split', 'rsplit', 'chop', 'chomp', 'lpad', 'rpad', 'lstrip', 'rstrip', 
-			'strip', 'isalnum', 'isalpha', 'isascii', 'isblank', 'iscntrl', 'isdigit', 
-			'isgraph', 'islower', 'isprint', 'ispunct', 'isspace', 'isupper', 'isxdigit', 
-			'match', 'captures', 'offset', 'offsets', 'matchall', 'eachmatch', 'hcat', 
-			'vcat', 'hvcat', 'reshape', 'deepcopy', 'similar', 'reinterpret', 'map', 
-			'reduce', 'mapreduce', 'DataArray', 'DataFrame', 'removeNA', 'replaceNA', 
-			'colnames', 'head', 'tail', 'describe', 'join', 'groupby', 'by', 'stack', 
-			'readtable', 'readcsv', 'readdlm', 'writetable', 'writecsv', 'writedlm', 
-			'require', 'reload', 'include', 'evalfile', 'cd', 'open', 'write', 'close', 
-			'position', 'seek', 'seekstart', 'seekend', 'skip', 'isopen', 'eof', 
-			'isreadonly', 'ltoh', 'htol', 'serialize', 'deserialize', 'download',
-			'in', 'isequal', 'getindex', 'setindex', 'eachline', 'beginswith', 'endswith',
-			'parsefloat', 'parseint', 'seekend', 'findnz', 'DivideError', 'addprocs', 
-			'scale', 'issubnormal', 'readdir', 'mapslices'
-		),
-		/*
-		** system interaction
-		*/
-		3 => array(
-			'run', 'spawn', 'success', 'process_running', 'process_exited', 'kill', 
-			'readsfrom', 'writesto', 'readsandwrite', 'detach', 'setenv', 'ENV', 'getpid', 
-			'clipboard', 'strftime', 'time', 'cd', 'gethostname', 'getipaddr', 'pwd', 
-			'mkdir', 'mkpath', 'rmdir', 'ignorestatus'
-        ),
-		4 => array(
-			'julia>'
+    //Longest quotemarks ALWAYS first
+    'QUOTEMARKS' => array('"""', '"', "'"),
+    'ESCAPE_CHAR' => '\\',
+    'KEYWORDS' => array(
+ 
+        /*
+        ** reserved words
+        */
+        1 => array(
+		'function', 'global', 'for', 'end', 'while', 'if', 'else', 'elseif', 'break',
+		'switch', 'case', 'otherwise', 'try', 'catch', 'end', 'const', 'immutable',
+		'import', 'importall', 'export', 'type', 'typealias', 'return', 'true', 
+		'false', 'macro', 'quote', 'in', 'abstract', 'module', 'using', 'continue', 
+		'ifelse', 'do', 'eval', 'let', 'finally', 'throw'
+            ),
+ 
+        /*
+        ** builtins
+        */
+        2 => array(
+		'Array', 'String', 'Bool', 'Number', 'Int', 'Integer', 'Real', 'Complex', 
+		'FloatingPoint', 'Float64', 'Float32', 'Int8', 'Int16', 'Int32', 'Int64', 
+		'Rational', 'AbstractArray', 'Unsigned', 'Signed', 'Uint', 'Uint8', 'Uint16', 
+		'Uint32', 'Uint64', 'Vector', 'AbstractVector', 'Matrix', 'AbstractMatrix', 
+		'Type', 'IO', 'Any', 'ASCIIString', 'Union', 'Dict', 'Function', 'SubArray', 
+		'Range', 'Range1', 'Symbol', 'Expr',
+		
+		'cell', 'collect', 'filter', 'merge', 'divrem', 'hex', 'dec', 'oct', 'base', 
+		'int', 'round', 'cmp', 'float', 'linspace', 'fill',	'start', 'done', 'tuple', 
+		'minimum', 'maximum', 'count', 'index', 'append', 'push', 'pop', 'shift', 
+		'unshift', 'insert', 'splice', 'reverse', 'sort', 'zip', 'length', 'delete', 
+		'copy', 'haskey', 'keys', 'values', 'get', 'getkey', 'Set', 'isa', 'issubset', 
+		'intersect', 'setdiff', 'symdiff', 'complement', 'print', 'printf', 'println', 
+		'sprintf', 'join', 'utf8', 'char', 'search', 'rsearch', 'beginswith', 'endswith',
+		'replace', 'lowercase', 'uppercase', 'ucfirst', 'lcfirst', 'union',
+		'split', 'rsplit', 'chop', 'chomp', 'lpad', 'rpad', 'lstrip', 'rstrip', 
+		'strip', 'isalnum', 'isalpha', 'isascii', 'isblank', 'iscntrl', 'isdigit', 
+		'isgraph', 'islower', 'isprint', 'ispunct', 'isspace', 'isupper', 'isxdigit', 
+		'match', 'captures', 'offset', 'offsets', 'matchall', 'eachmatch', 'hcat', 
+		'vcat', 'hvcat', 'reshape', 'deepcopy', 'similar', 'reinterpret', 'map', 
+		'reduce', 'mapreduce', 'DataArray', 'DataFrame', 'removeNA', 'replaceNA', 
+		'colnames', 'head', 'tail', 'describe', 'join', 'groupby', 'by', 'stack', 
+		'readtable', 'readcsv', 'readdlm', 'writetable', 'writecsv', 'writedlm', 
+		'require', 'reload', 'include', 'evalfile', 'cd', 'open', 'write', 'close', 
+		'position', 'seek', 'seekstart', 'seekend', 'skip', 'isopen', 'eof', 
+		'isreadonly', 'ltoh', 'htol', 'serialize', 'deserialize', 'download',
+		'in', 'isequal', 'getindex', 'setindex', 'eachline', 'beginswith', 'endswith',
+		'parsefloat', 'parseint', 'seekend', 'findnz', 'DivideError', 'addprocs', 
+		'scale', 'issubnormal', 'readdir', 'mapslices'
+            ),
+ 
+        /*
+        ** system interaction
+        */
+        3 => array(
+		'run', 'spawn', 'success', 'process_running', 'process_exited', 'kill', 
+		'readsfrom', 'writesto', 'readsandwrite', 'detach', 'setenv', 'ENV', 'getpid', 
+		'clipboard', 'strftime', 'time', 'cd', 'gethostname', 'getipaddr', 'pwd', 
+		'mkdir', 'mkpath', 'rmdir', 'ignorestatus'
+            ),
+ 
+        /*
+        ** prompt
+        */
+        4 => array(
+		'julia>'
+            )
         ),
     'SYMBOLS' => array(
-        '...'
+            '(', ')', '[', ']', '{', '}', '*', '&', '|', '%', '!', ';', '<', '>', '?', '`'
         ),
     'CASE_SENSITIVE' => array(
         GESHI_COMMENTS => false,
-        1 => false,
-        2 => false,
-        3 => false,
-        4 => false,
+        1 => true,
+        2 => true,
+        3 => true,
+        4 => true
         ),
     'STYLES' => array(
         'KEYWORDS' => array(
-            1 => 'color: #000066; font-weight: bold;',
-            2 => 'color: #0000FF; font-weight: bold;',
-            3 => 'color: #0000FF; font-weight: bold;',
-            4 => 'color: #FF0000; font-weight: bold;'
+            1 => 'color: #4266d5;font-weight:bold;',    // Reserved
+            2 => 'color: #0000A8;font-weight:bold;',    // Built-ins
+            3 => 'color: #0000A8;font-weight:bold;',    // System Interaction
+            4 => 'color: #3b972e;font-weight:bold;'     // Prompt
             ),
         'COMMENTS' => array(
-            1 => 'color: #228B22;',
-            2 => 'color:#A020F0;'
+            1 => 'color: #888888;',
+            'MULTI' => 'color: #888888;'
             ),
         'ESCAPE_CHAR' => array(
-            0 => ''
+            0 => 'color: #000099; font-weight: bold;'
             ),
         'BRACKETS' => array(
-            0 => 'color: #080;'
+            0 => 'color: #3b972e;'
             ),
         'STRINGS' => array(
-            //0 => 'color: #A020F0;'
+            0 => 'color: #c93d39;'
             ),
         'NUMBERS' => array(
-            0 => 'color: #33f;'
+            0 => 'color: black;'
             ),
         'METHODS' => array(
-            1 => '',
-            2 => ''
+            1 => 'color: black;'
             ),
         'SYMBOLS' => array(
-            0 => 'color: #080;'
+            0 => 'color: #6bab5b;'
             ),
         'REGEXPS' => array(
-            0 => 'color: #33f;'
             ),
         'SCRIPT' => array(
-            0 => ''
             )
         ),
     'URLS' => array(
         1 => '',
-        2 => 'http://docs.julialang.org/en/latest/'
+        2 => '',
+        3 => '',
+        4 => ''
         ),
     'OOLANG' => true,
     'OBJECT_SPLITTERS' => array(
-        1 => '.',
-        2 => '::'
+        1 => '.'
         ),
     'REGEXPS' => array(
-        //Complex numbers
-        0 => '(?<![\\w])[+-]?[\\d]*([\\d]\\.|\\.[\\d])?[\\d]*[ij](?![\\w])'
         ),
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
     'SCRIPT_DELIMITERS' => array(

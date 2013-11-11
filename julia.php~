@@ -62,8 +62,6 @@ $language_data = array (
 		** functions and types
 		*/
 		2 => array(
-			//'+', '-', '*', '/', '\', '^', ''', '.', '=', '&lt;', '&gt;', '~', 
-			//'&amp;', '|', '[', ']', '(', ')', ';', ':', '%', ',', '!',
 			'Array', 'String', 'Bool', 'Number', 'Int', 'Integer', 'Real', 'Complex', 
 			'FloatingPoint', 'Float64', 'Float32', 'Int8', 'Int16', 'Int32', 'Int64', 
 			'Rational', 'AbstractArray', 'Unsigned', 'Signed', 'Uint', 'Uint8', 'Uint16', 
@@ -78,7 +76,7 @@ $language_data = array (
 			'copy', 'haskey', 'keys', 'values', 'get', 'getkey', 'Set', 'isa', 'issubset', 
 			'intersect', 'setdiff', 'symdiff', 'complement', 'print', 'printf', 'println', 
 			'sprintf', 'join', 'utf8', 'char', 'search', 'rsearch', 'beginswith', 'endswith',
-			'replace', 'lowercase', 'uppercase', 'ucfirst', 'lcfirst', 
+			'replace', 'lowercase', 'uppercase', 'ucfirst', 'lcfirst', 'union',
 			'split', 'rsplit', 'chop', 'chomp', 'lpad', 'rpad', 'lstrip', 'rstrip', 
 			'strip', 'isalnum', 'isalpha', 'isascii', 'isblank', 'iscntrl', 'isdigit', 
 			'isgraph', 'islower', 'isprint', 'ispunct', 'isspace', 'isupper', 'isxdigit', 
@@ -90,16 +88,21 @@ $language_data = array (
 			'require', 'reload', 'include', 'evalfile', 'cd', 'open', 'write', 'close', 
 			'position', 'seek', 'seekstart', 'seekend', 'skip', 'isopen', 'eof', 
 			'isreadonly', 'ltoh', 'htol', 'serialize', 'deserialize', 'download',
-		//),
+			'in', 'isequal', 'getindex', 'setindex', 'eachline', 'beginswith', 'endswith',
+			'parsefloat', 'parseint', 'seekend', 'findnz', 'DivideError', 'addprocs', 
+			'scale', 'issubnormal', 'readdir', 'mapslices'
+		),
 		/*
 		** system interaction
 		*/
-		//6 => array(
+		3 => array(
 			'run', 'spawn', 'success', 'process_running', 'process_exited', 'kill', 
 			'readsfrom', 'writesto', 'readsandwrite', 'detach', 'setenv', 'ENV', 'getpid', 
 			'clipboard', 'strftime', 'time', 'cd', 'gethostname', 'getipaddr', 'pwd', 
 			'mkdir', 'mkpath', 'rmdir', 'ignorestatus'
-            )
+        ),
+		4 => array(
+			'julia>'
         ),
     'SYMBOLS' => array(
         '...'
@@ -108,13 +111,15 @@ $language_data = array (
         GESHI_COMMENTS => false,
         1 => false,
         2 => false,
-        //3 => false,
-        //4 => false,
+        3 => false,
+        4 => false,
         ),
     'STYLES' => array(
         'KEYWORDS' => array(
-            1 => 'color: #0000FF;',
-            2 => 'color: #0000FF;'
+            1 => 'color: #000066; font-weight: bold;',
+            2 => 'color: #0000FF; font-weight: bold;',
+            3 => 'color: #0000FF; font-weight: bold;',
+            4 => 'color: #FF0000; font-weight: bold;'
             ),
         'COMMENTS' => array(
             1 => 'color: #228B22;',
