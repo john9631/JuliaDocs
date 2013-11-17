@@ -51,7 +51,7 @@ $language_data = array (
         */
         1 => array(
 		'function', 'global', 'for', 'end', 'while', 'if', 'else', 'elseif', 'break',
-		'switch', 'case', 'otherwise', 'try', 'catch', 'end', 'const', 'immutable',
+		'switch', 'case', 'otherwise', 'try', 'catch', 'const', 'immutable',
 		'import', 'importall', 'export', 'type', 'typealias', 'return', 'true', 
 		'false', 'macro', 'quote', 'in', 'abstract', 'module', 'using', 'continue', 
 		'ifelse', 'do', 'eval', 'let', 'finally', 'throw'
@@ -74,7 +74,7 @@ $language_data = array (
 		'unshift', 'insert', 'splice', 'reverse', 'sort', 'zip', 'length', 'delete', 
 		'copy', 'haskey', 'keys', 'values', 'get', 'getkey', 'Set', 'isa', 'issubset', 
 		'intersect', 'setdiff', 'symdiff', 'complement', 'print', 'printf', 'println', 
-		'sprintf', 'join', 'utf8', 'char', 'search', 'rsearch', 'beginswith', 'endswith',
+		'sprintf', 'utf8', 'char', 'search', 'rsearch',
 		'replace', 'lowercase', 'uppercase', 'ucfirst', 'lcfirst', 'union',
 		'split', 'rsplit', 'chop', 'chomp', 'lpad', 'rpad', 'lstrip', 'rstrip', 
 		'strip', 'isalnum', 'isalpha', 'isascii', 'isblank', 'iscntrl', 'isdigit', 
@@ -85,9 +85,9 @@ $language_data = array (
 		'colnames', 'head', 'tail', 'describe', 'join', 'groupby', 'by', 'stack', 
 		'readtable', 'readcsv', 'readdlm', 'writetable', 'writecsv', 'writedlm', 
 		'require', 'reload', 'include', 'evalfile', 'cd', 'open', 'write', 'close', 
-		'position', 'seek', 'seekstart', 'seekend', 'skip', 'isopen', 'eof', 
+		'position', 'seek', 'seekstart', 'skip', 'isopen', 'eof', 
 		'isreadonly', 'ltoh', 'htol', 'serialize', 'deserialize', 'download',
-		'in', 'isequal', 'getindex', 'setindex', 'eachline', 'beginswith', 'endswith',
+		'isequal', 'getindex', 'setindex', 'eachline', 'beginswith', 'endswith',
 		'parsefloat', 'parseint', 'seekend', 'findnz', 'DivideError', 'addprocs', 
 		'scale', 'issubnormal', 'readdir', 'mapslices'
             ),
@@ -98,7 +98,7 @@ $language_data = array (
         3 => array(
 		'run', 'spawn', 'success', 'process_running', 'process_exited', 'kill', 
 		'readsfrom', 'writesto', 'readsandwrite', 'detach', 'setenv', 'ENV', 'getpid', 
-		'clipboard', 'strftime', 'time', 'cd', 'gethostname', 'getipaddr', 'pwd', 
+		'clipboard', 'strftime', 'time', 'gethostname', 'getipaddr', 'pwd', 
 		'mkdir', 'mkpath', 'rmdir', 'ignorestatus'
             ),
  
